@@ -1,0 +1,105 @@
+﻿@model IEnumerable<ComplaintManagementSystem.Models.Complaint>
+
+@{
+    ViewData["Title"] = "Complaints";
+    Layout = "_Layout";
+}
+<body class="dashboard-page">
+
+    <div class="container mt-5">
+
+        <!-- ===== Dashboard Hero Section ===== -->
+        <div class="dashboard-hero mb-4 text-center">
+            <h2 class="mb-3 text-primary">Complaint Management Dashboard📋</h2>
+            <p class="mb-0 text-muted-dark">
+                Track, review, and manage all complaints efficiently. Each status below is color-coded for easy monitoring.
+            </p>
+        </div>
+
+        <!-- ===== Summary Cards ===== -->
+        <div class="row text-center mb-4">
+            <div class="col-md-4 mb-3">
+                <div class="card shadow-sm border-0" style="background-color:#fff7e6;">
+                    <div class="card-body">
+                        <h5 class="card-title text-warning">Pending</h5>
+                        <h2 class="fw-bold">@ViewBag.PendingCount</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card shadow-sm border-0" style="background-color:#e6f7ff;">
+                    <div class="card-body">
+                        <h5 class="card-title text-info">In Progress</h5>
+                        <h2 class="fw-bold">@ViewBag.InProgressCount</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card shadow-sm border-0" style="background-color:#e6ffe6;">
+                    <div class="card-body">
+                        <h5 class="card-title text-success">Resolved</h5>
+                        <h2 class="fw-bold">@ViewBag.ResolvedCount</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== Complaints Table ===== -->
+        <div class="card shadow-sm p-3" style="background-color: #ffffff;">
+            <table class="table table-bordered table-hover">
+                <thead class="table-primary">
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                        @if (ViewBag.UserRole == "Admin" || ViewBag.UserRole == "Staff")
+                        {
+                            <th>Actions</th>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Title</td>
+                            <td>@item.Description</td>
+                            <td>
+                                @if (item.Status == "Pending")
+                                {
+                                    <span class="badge bg-warning text-dark">Pending</span>
+                                }
+                                else if (item.Status == "In Progress")
+                                {
+                                    <span class="badge bg-info text-dark">In Progress</span>
+                                }
+                                else if (item.Status == "Resolved")
+                                {
+                                    <span class="badge bg-success text-dark">Resolved</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">@item.Status</span>
+                                }
+                            </td>
+                            <td>@item.DateCreated.ToString("dd MMM yyyy")</td>
+
+                            @if (ViewBag.UserRole == "Admin" || ViewBag.UserRole == "Staff")
+                            {
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.ComplaintID" class="btn btn-warning btn-sm me-1">Edit</a>
+                                    <a asp-action="Delete" asp-route-id="@item.ComplaintID" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this complaint?');">Delete</a>
+                                </td>
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="text-center mt-4">
+            <a asp-action="Create" class="btn btn-success px-4">+ Submit New Complaint</a>
+        </div>
+    </div>
+</body>

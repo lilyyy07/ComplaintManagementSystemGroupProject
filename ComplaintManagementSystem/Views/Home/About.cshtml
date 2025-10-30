@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "About";
+    Layout = "_Layout";
+}
+<body class="about-page">
+
+    <div class="container mt-5 fade-in">
+        <!-- Hero Section -->
+        <div class="about-hero fade-in fade-delay-1">
+            <h1>About the Complaint Management System 💡</h1>
+            <p>
+                This platform is built to streamline the complaint-handling process.
+                It bridges communication between users and administrators, ensuring that
+                every issue receives attention and resolution with accountability.
+            </p>
+        </div>
+
+        <!-- Objectives -->
+        <div class="mt-5 fade-in fade-delay-2">
+            <h3 class="text-center text-primary mb-4">Our Objectives🎯</h3>
+            <div class="row text-center">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <h4>Efficiency</h4>
+                        <p>Automating complaint submissions to reduce paperwork and delay.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <h4>Transparency</h4>
+                        <p>Track every report and maintain clear accountability at each step.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <h4>Improvement</h4>
+                        <p>Use complaint data to identify recurring problems and improve services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="text-center mt-4 fade-in fade-delay-3">
+            <a asp-action="Index" class="btn btn-primary px-4 me-2">Back to Home</a>
+            <a asp-action="FAQ" class="btn btn-success px-4">View FAQs</a>
+        </div>
+    </div>
+</body>

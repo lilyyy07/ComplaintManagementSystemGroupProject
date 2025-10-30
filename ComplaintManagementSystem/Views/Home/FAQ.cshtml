@@ -1,0 +1,101 @@
+﻿@{
+    ViewData["Title"] = "FAQ";
+    Layout = "_Layout";
+}
+<body class="faq-page">
+
+    <div class="container mt-5 fade-in">
+        <!-- Hero Section -->
+        <div class="faq-hero fade-in fade-delay-1">
+            <h1> Frequently Asked Questions❓</h1>
+            <p>Find quick answers to the most common questions from our users.</p>
+        </div>
+
+        <!-- FAQ Accordion -->
+        <div class="accordion mt-4 fade-in fade-delay-2" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="q1">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a1">
+                        How do I submit a complaint?
+                    </button>
+                </h2>
+                <div id="a1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Simply click “Submit Complaint” on the navigation bar, fill out the form, and click Submit.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="q2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2">
+                        Who can manage complaints?
+                    </button>
+                </h2>
+                <div id="a2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Admins and Staff can update or delete complaints. Users can only view and submit new ones.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="q3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3">
+                        How can I see complaint progress?
+                    </button>
+                </h2>
+                <div id="a3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        You can track each complaint’s progress (Pending, In Progress, or Resolved) from your Dashboard.
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Questions -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="q4">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a4">
+                        Can I edit my complaint after submission?
+                    </button>
+                </h2>
+                <div id="a4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Only Admins and Staff can edit complaints. Users cannot edit complaints once submitted.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="q5">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a5">
+                        How do I delete a complaint?
+                    </button>
+                </h2>
+                <div id="a5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Only Admins and Staff can delete complaints. Users cannot delete complaints once submitted.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="q6">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a6">
+                        Will I get notified about complaint updates?
+                    </button>
+                </h2>
+                <div id="a6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes, you will receive notifications in your Dashboard whenever the status of your complaint changes.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="text-center mt-5 fade-in fade-delay-3">
+            <a asp-action="Index" class="btn btn-primary px-4 me-2">Back to Home</a>
+            <a asp-controller="Complaints" asp-action="Index" class="btn btn-success px-4">Go to Dashboard</a>
+        </div>
+    </div>
+</body>
