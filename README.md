@@ -4,10 +4,10 @@ The backend handles database operations, role-based access, and complaint manage
 
 #Project Structure
 
-ComplaintManagementSystem.zip	- The complete backend project folder containing controllers, models, and views.
-ComplaintDB.sql -	SQL script used to create the database, tables, and sample data. Can be executed in SSMS.
-/Controllers/ComplaintsApiController.cs	- RESTful API endpoints for CRUD operations (GET, POST, PUT, DELETE). Tested using Postman.
-/Controllers/ComplaintsController.cs - MVC controller that manages complaints logic and connects to SQL Server.
-/Views/Complaints/	- Contains the system’s pages for complaint submission, editing, and dashboard views.
-/Views/Home/	- Public-facing pages such as Home, About, and FAQ.
-appsettings.json -	Stores database connection strings and environment configuration.
+ComplaintManagementSystem.zip	- The complete backend project folder containing controllers, models, and views.	
+ComplaintDB.sql -	SQL script used to create the database, tables, and sample data. Can be executed in SSMS.	
+/Controllers/ComplaintsApiController.cs	- RESTful API endpoints for CRUD operations (GET, POST, PUT, DELETE). Tested using Postman.	
+/Controllers/ComplaintsController.cs - MVC controller that manages complaints logic and connects to SQL Server.	
+/Views/Complaints/	- Contains the system’s pages for complaint submission, editing, and dashboard views.	
+/Views/Home/	- Public-facing pages such as Home, About, and FAQ.	
+appsettings.json -	Stores database connection strings and environment configuration.	
